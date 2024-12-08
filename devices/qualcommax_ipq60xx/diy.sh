@@ -18,5 +18,5 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae
 #get the libcron （daed依赖）
 mkdir -p Package/libcron && wget -O Package/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
 
-#修改分区大小
-sed -i 's/^\s*\(CONFIG_TARGET_KERNEL_SIZE\)\s*=\s*[^#\n \t]*/\1=8/' .config
+#修改内核大小为8MB
+sed -i '58s/6144/8192/' target/linux/qualcommax/image/ipq60xx.mk
