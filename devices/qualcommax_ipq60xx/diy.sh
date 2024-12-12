@@ -20,3 +20,6 @@ mkdir -p Package/libcron && wget -O Package/libcron/Makefile https://raw.githubu
 
 #修改内核大小为8MB
 sed -i '58s/6144/8192/' target/linux/qualcommax/image/ipq60xx.mk
+
+#修改UPnP 菜单名
+sed -i "s/UPnP IGD & PCP\/NAT-PMP/UPnP/g" feeds/luci/applications/luci-app-upnp/root/usr/share/luci/menu.d/luci-app-upnp.json
